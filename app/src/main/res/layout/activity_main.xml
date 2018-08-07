@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/Theme.AppCompat.Light">
+        </android.support.v7.widget.Toolbar>
+
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radiobtn1"
+                style="@style/tab_menu_item"
+                android:text="第一"
+                android:checked="true"
+                android:drawableTop="@drawable/one_selector"
+                />
+            <RadioButton
+                android:id="@+id/radiobtn2"
+                style="@style/tab_menu_item"
+                android:text="第二"
+                android:drawableTop="@drawable/two_selector"/>
+            <RadioButton
+                android:id="@+id/radiobtn3"
+                style="@style/tab_menu_item"
+                android:text="第三"
+                android:drawableTop="@drawable/three_selector"/>
+            <RadioButton
+                android:id="@+id/radiobtn4"
+                style="@style/tab_menu_item"
+                android:text="第四"
+                android:drawableTop="@drawable/four_selector"/>
+
+        </RadioGroup>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpaper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/radio_group"
+            android:layout_below="@+id/toolbar"/>
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/nav_menu"
+        app:headerLayout="@layout/nav_header">
+
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>
